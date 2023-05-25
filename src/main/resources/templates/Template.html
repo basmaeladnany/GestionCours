@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Cours Management</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.2.0/css/bootstrap.min.css">
+    <Link rel="stylesheet" href="/webjars/bootstrap-icons/1.10.5/font/bootstrap-icons.css">
+    <script src="/webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{coursList}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Cours</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" th:href="@{createCours}">New</a></li>
+                <li><a class="dropdown-item" th:href="@{coursList}">List</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+               th:text="${#authentification.name}">[username]</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" href="#">login</a>
+
+                </li>
+                <li>
+                    <form method="post" th:action="@{/logout}">
+                        <button class="dropdown-item" type="submit">logout</button>
+
+                    </form>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">Profile</a>
+
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div Layout:fragment="content">
+</div>
+<footer class="text-center fixed-bottom text-lg-start bg-light text-muted">
+    <div class="text-center p-4" style="background-color:rgba(0, 0, 0, 0.05);">
+        2023 Basma
+        <a >eladnany</a>
+    </div>
+</footer>
+</div>
+</div>
+</body>
+</html>
